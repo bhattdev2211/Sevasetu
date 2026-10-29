@@ -1,0 +1,609 @@
+{
+  "currentUser": {
+    "id": "user-1",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@example.org",
+    "role": "Volunteer",
+    "city": "Rajkot",
+    "phone": "+91 98250 12345",
+    "organization": "Youth Seva Group",
+    "avatarBg": "#0f766e",
+    "joinedDate": "Jan 2026",
+    "mealsRescued": 45,
+    "bloodDonated": true,
+    "contributions": 3500
+  },
+  "personas": [
+    {
+      "id": "user-1",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@example.org",
+      "role": "Volunteer",
+      "city": "Rajkot",
+      "phone": "+91 98250 12345",
+      "organization": "Youth Seva Group",
+      "avatarBg": "#0f766e",
+      "joinedDate": "Jan 2026",
+      "mealsRescued": 45,
+      "bloodDonated": true,
+      "contributions": 3500
+    },
+    {
+      "id": "user-2",
+      "name": "Rajesh Patel",
+      "email": "rajesh.annapurna@example.com",
+      "role": "Food Donor",
+      "city": "Ahmedabad",
+      "phone": "+91 98980 54321",
+      "organization": "Annapurna Catering & Banquet",
+      "avatarBg": "#d97706",
+      "joinedDate": "Feb 2026",
+      "mealsRescued": 280,
+      "bloodDonated": false,
+      "contributions": 12000
+    },
+    {
+      "id": "user-3",
+      "name": "Dr. Ananya Mehta",
+      "email": "ananya.mehta@cityhospital.org",
+      "role": "Blood Coordinator",
+      "city": "Surat",
+      "phone": "+91 97123 98765",
+      "organization": "Surat Red Cross Society",
+      "avatarBg": "#c43232",
+      "joinedDate": "Nov 2025",
+      "mealsRescued": 0,
+      "bloodDonated": true,
+      "contributions": 5000
+    },
+    {
+      "id": "user-4",
+      "name": "Vikramjit Singh",
+      "email": "vikram.singh@sevasetu.org",
+      "role": "NGO Organizer",
+      "city": "Vadodara",
+      "phone": "+91 94260 77889",
+      "organization": "Baroda Citizen Relief",
+      "avatarBg": "#1e3a5f",
+      "joinedDate": "Dec 2025",
+      "mealsRescued": 160,
+      "bloodDonated": true,
+      "contributions": 25000
+    }
+  ],
+  "foodDonations": [
+    {
+      "id": "food-1",
+      "title": "Fresh Roti, Dal Makhani & Sabzi",
+      "description": "Surplus wedding banquet food, prepared under hygienic conditions, packed in insulated warm containers.",
+      "foodType": "Cooked Meals",
+      "dietType": "Pure Veg",
+      "quantity": "40 meal packets",
+      "approxMeals": 40,
+      "cookedAt": "2 hours ago",
+      "bestBefore": "Tonight, 10:30 PM",
+      "status": "Available",
+      "city": "Rajkot",
+      "location": "Kalavad Road, near Crystal Mall",
+      "donorName": "Shreeji Caterers (Rajesh Patel)",
+      "donorPhone": "+91 98251 44556",
+      "donorRole": "Caterer / Restaurant",
+      "requesterName": null,
+      "createdAt": "2026-10-28T18:30:00Z"
+    },
+    {
+      "id": "food-2",
+      "title": "Packed Lunch Boxes (Roti, Rice, Paneer Subji)",
+      "description": "Corporate annual meeting surplus lunch boxes. Clean, sealed meal trays with napkins and cutlery.",
+      "foodType": "Cooked Meals",
+      "dietType": "Pure Veg",
+      "quantity": "25 boxes",
+      "approxMeals": 25,
+      "cookedAt": "3 hours ago",
+      "bestBefore": "Tonight, 9:00 PM",
+      "status": "Requested",
+      "city": "Ahmedabad",
+      "location": "SG Highway, Prahlad Nagar",
+      "donorName": "TechPark Cafeteria",
+      "donorPhone": "+91 98790 11223",
+      "donorRole": "Corporate Office",
+      "requesterName": "Robin Hood Army - Ahmedabad Chapter",
+      "createdAt": "2026-10-28T17:15:00Z"
+    },
+    {
+      "id": "food-3",
+      "title": "Fresh Wheat Flour & Toor Dal Ration Kits",
+      "description": "Donated dry groceries: 10kg bags of Sharbati wheat flour and 5kg packets of polished toor dal.",
+      "foodType": "Raw Ration",
+      "dietType": "Pure Veg",
+      "quantity": "8 kits (80 kg total)",
+      "approxMeals": 150,
+      "cookedAt": "Packaged Stock",
+      "bestBefore": "Valid up to 6 months",
+      "status": "Available",
+      "city": "Surat",
+      "location": "Ring Road, Textile Market Zone",
+      "donorName": "Mahavir Traders",
+      "donorPhone": "+91 98241 88990",
+      "donorRole": "Wholesaler",
+      "requesterName": null,
+      "createdAt": "2026-10-28T14:00:00Z"
+    },
+    {
+      "id": "food-4",
+      "title": "Surplus Fresh Bakery Bread & Buns",
+      "description": "Assorted whole wheat sandwich breads, pav, and burger buns baked this morning.",
+      "foodType": "Bakery",
+      "dietType": "Pure Veg",
+      "quantity": "60 packets",
+      "approxMeals": 60,
+      "cookedAt": "This Morning",
+      "bestBefore": "Tomorrow evening",
+      "status": "Available",
+      "city": "Vadodara",
+      "location": "Alkapuri, RC Dutt Road",
+      "donorName": "Golden Crust Bakery",
+      "donorPhone": "+91 99090 33445",
+      "donorRole": "Bakery Store",
+      "requesterName": null,
+      "createdAt": "2026-10-28T11:20:00Z"
+    },
+    {
+      "id": "food-5",
+      "title": "Nutritious Khichdi & Buttermilk",
+      "description": "Cooked at temple community kitchen for noon distribution. High quality ghee and grains.",
+      "foodType": "Cooked Meals",
+      "dietType": "Pure Veg",
+      "quantity": "50 portions",
+      "approxMeals": 50,
+      "cookedAt": "12:00 PM",
+      "bestBefore": "Tonight, 8:00 PM",
+      "status": "Completed",
+      "city": "Rajkot",
+      "location": "Dharmendrasinhji Road",
+      "donorName": "Jalaram Mandir Trust",
+      "donorPhone": "+91 94272 55667",
+      "donorRole": "Community Trust",
+      "requesterName": "Priya Sharma (Youth Seva)",
+      "createdAt": "2026-10-28T09:30:00Z"
+    },
+    {
+      "id": "food-6",
+      "title": "Fresh Seasonal Fruit Baskets (Bananas & Apples)",
+      "description": "Surplus quality fruits from wholesale mandi crates. Great for shelter children & elderly homes.",
+      "foodType": "Packaged",
+      "dietType": "Pure Veg",
+      "quantity": "35 kg",
+      "approxMeals": 70,
+      "cookedAt": "Farm Fresh",
+      "bestBefore": "3 days",
+      "status": "Available",
+      "city": "Ahmedabad",
+      "location": "Jamalpur APMC Market",
+      "donorName": "Kisan Fruit Supply",
+      "donorPhone": "+91 97230 44112",
+      "donorRole": "Market Vendor",
+      "requesterName": null,
+      "createdAt": "2026-10-28T15:45:00Z"
+    }
+  ],
+  "bloodRequests": [
+    {
+      "id": "blood-req-1",
+      "patientName": "Kavita Ben",
+      "bloodGroup": "B+",
+      "unitsNeeded": 2,
+      "hospitalName": "Civil Hospital, Rajkot",
+      "city": "Rajkot",
+      "urgency": "Critical",
+      "contactPerson": "Harish Bhai (Relative)",
+      "contactPhone": "+91 98254 33221",
+      "caseDetails": "Emergency surgery in Trauma Ward ICU. Need B+ plasma/blood units urgently.",
+      "status": "Urgent",
+      "createdAt": "2026-10-28T18:00:00Z"
+    },
+    {
+      "id": "blood-req-2",
+      "patientName": "Devang Trivedi",
+      "bloodGroup": "O-",
+      "unitsNeeded": 3,
+      "hospitalName": "Apollo Hospitals, Ahmedabad",
+      "city": "Ahmedabad",
+      "urgency": "Critical",
+      "contactPerson": "Nitin Trivedi (Father)",
+      "contactPhone": "+91 98982 77112",
+      "caseDetails": "Rare universal donor blood needed for Thalassemia child patient awaiting transfusion.",
+      "status": "Urgent",
+      "createdAt": "2026-10-28T16:20:00Z"
+    },
+    {
+      "id": "blood-req-3",
+      "patientName": "Sunita Chauhan",
+      "bloodGroup": "A+",
+      "unitsNeeded": 1,
+      "hospitalName": "SMIMER Hospital, Surat",
+      "city": "Surat",
+      "urgency": "Urgent",
+      "contactPerson": "Manoj Chauhan (Husband)",
+      "contactPhone": "+91 97120 66554",
+      "caseDetails": "Scheduled C-section delivery tomorrow morning. Blood bank requested 1 reserve unit.",
+      "status": "Donors Found",
+      "createdAt": "2026-10-28T13:40:00Z"
+    },
+    {
+      "id": "blood-req-4",
+      "patientName": "Farhan Sheikh",
+      "bloodGroup": "AB+",
+      "unitsNeeded": 2,
+      "hospitalName": "SSG Hospital, Vadodara",
+      "city": "Vadodara",
+      "urgency": "Needed today",
+      "contactPerson": "Zakir Sheikh (Brother)",
+      "contactPhone": "+91 94263 11889",
+      "caseDetails": "Orthopedic accident surgery scheduled for 6 PM. Donor replacement sought.",
+      "status": "Urgent",
+      "createdAt": "2026-10-28T12:00:00Z"
+    },
+    {
+      "id": "blood-req-5",
+      "patientName": "Ramesh Vaghela",
+      "bloodGroup": "O+",
+      "unitsNeeded": 2,
+      "hospitalName": "Sterling Hospital, Rajkot",
+      "city": "Rajkot",
+      "urgency": "Urgent",
+      "contactPerson": "Sanjay Vaghela",
+      "contactPhone": "+91 98259 44332",
+      "caseDetails": "Cardiac bypass procedure reserve blood.",
+      "status": "Fulfilled",
+      "createdAt": "2026-10-27T10:00:00Z"
+    }
+  ],
+  "bloodDonors": [
+    {
+      "id": "donor-1",
+      "name": "Hardik Goswami",
+      "bloodGroup": "O-",
+      "city": "Ahmedabad",
+      "phone": "+91 98240 11992",
+      "lastDonated": "2026-06-15",
+      "isAvailable": true,
+      "donationCount": 6,
+      "verified": true
+    },
+    {
+      "id": "donor-2",
+      "name": "Pooja Dave",
+      "bloodGroup": "B+",
+      "city": "Rajkot",
+      "phone": "+91 98984 22331",
+      "lastDonated": "2026-05-10",
+      "isAvailable": true,
+      "donationCount": 4,
+      "verified": true
+    },
+    {
+      "id": "donor-3",
+      "name": "Bhavesh Chudasama",
+      "bloodGroup": "B+",
+      "city": "Rajkot",
+      "phone": "+91 98255 66778",
+      "lastDonated": "2026-09-02",
+      "isAvailable": true,
+      "donationCount": 9,
+      "verified": true
+    },
+    {
+      "id": "donor-4",
+      "name": "Meera Solanki",
+      "bloodGroup": "A+",
+      "city": "Surat",
+      "phone": "+91 97129 44556",
+      "lastDonated": "2026-04-20",
+      "isAvailable": true,
+      "donationCount": 3,
+      "verified": true
+    },
+    {
+      "id": "donor-5",
+      "name": "Dr. Chirag Raval",
+      "bloodGroup": "AB-",
+      "city": "Vadodara",
+      "phone": "+91 94268 99001",
+      "lastDonated": "2026-07-12",
+      "isAvailable": true,
+      "donationCount": 11,
+      "verified": true
+    },
+    {
+      "id": "donor-6",
+      "name": "Ketan Ruparelia",
+      "bloodGroup": "O+",
+      "city": "Rajkot",
+      "phone": "+91 98250 88776",
+      "lastDonated": "2026-08-18",
+      "isAvailable": true,
+      "donationCount": 8,
+      "verified": true
+    },
+    {
+      "id": "donor-7",
+      "name": "Sneha Kapadia",
+      "bloodGroup": "A-",
+      "city": "Ahmedabad",
+      "phone": "+91 98792 33441",
+      "lastDonated": "2026-03-30",
+      "isAvailable": false,
+      "donationCount": 5,
+      "verified": true
+    },
+    {
+      "id": "donor-8",
+      "name": "Mohsin Mansuri",
+      "bloodGroup": "AB+",
+      "city": "Surat",
+      "phone": "+91 97235 66112",
+      "lastDonated": "2026-07-05",
+      "isAvailable": true,
+      "donationCount": 7,
+      "verified": true
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn-101",
+      "title": "Ration supply purchase for flood-affected families",
+      "type": "expense",
+      "amount": 14500,
+      "category": "Ration Relief",
+      "date": "2026-10-27",
+      "recordedBy": "Vikramjit Singh",
+      "notes": "Bought 30 ration packets (Rice, Atta, Oil, Pulses) with GST invoice #GST-8842",
+      "receiptId": "REC-2026-8842"
+    },
+    {
+      "id": "txn-102",
+      "title": "Monthly community contribution from local traders union",
+      "type": "income",
+      "amount": 25000,
+      "category": "Community Contribution",
+      "date": "2026-10-25",
+      "recordedBy": "Priya Sharma",
+      "notes": "Direct bank transfer from Rajkot Merchants Charitable Wing",
+      "receiptId": "REC-2026-7421"
+    },
+    {
+      "id": "txn-103",
+      "title": "Emergency medicine & blood testing kits for outreach camp",
+      "type": "expense",
+      "amount": 6200,
+      "category": "Medical Aid",
+      "date": "2026-10-22",
+      "recordedBy": "Dr. Ananya Mehta",
+      "notes": "Insulin, basic antibiotics, syringe packs, blood grouping reagents",
+      "receiptId": "REC-2026-6190"
+    },
+    {
+      "id": "txn-104",
+      "title": "Online crowd-fund donation for winter blanket drive",
+      "type": "income",
+      "amount": 18000,
+      "category": "Crowdfund / Public",
+      "date": "2026-10-20",
+      "recordedBy": "Rajesh Patel",
+      "notes": "Aggregated micro-donations received via UPI payment gateway",
+      "receiptId": "REC-2026-5501"
+    },
+    {
+      "id": "txn-105",
+      "title": "Community kitchen gas cylinders & cooking fuel",
+      "type": "expense",
+      "amount": 3800,
+      "category": "Community Kitchen",
+      "date": "2026-10-18",
+      "recordedBy": "Priya Sharma",
+      "notes": "4 commercial LPG refills for free evening meal kitchen",
+      "receiptId": "REC-2026-4412"
+    },
+    {
+      "id": "txn-106",
+      "title": "Fuel & logistics for food rescue delivery van",
+      "type": "expense",
+      "amount": 2500,
+      "category": "Logistics & Fuel",
+      "date": "2026-10-15",
+      "recordedBy": "Vikramjit Singh",
+      "notes": "Diesel bill for weekly night food pickup vehicle across 14 banquet halls",
+      "receiptId": "REC-2026-3982"
+    },
+    {
+      "id": "txn-107",
+      "title": "CSR Support from Western Auto Components",
+      "type": "income",
+      "amount": 30000,
+      "category": "CSR Grant",
+      "date": "2026-10-10",
+      "recordedBy": "Vikramjit Singh",
+      "notes": "Earmarked for child nutrition and education support kits",
+      "receiptId": "REC-2026-2810"
+    },
+    {
+      "id": "txn-108",
+      "title": "Notebooks and stationery kits for slum school children",
+      "type": "expense",
+      "amount": 5500,
+      "category": "Education Support",
+      "date": "2026-10-06",
+      "recordedBy": "Priya Sharma",
+      "notes": "150 student learning kits distributed in Mavdi slum cluster",
+      "receiptId": "REC-2026-1930"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "title": "Food Donation Requested",
+      "message": "Robin Hood Army requested pickup for 'Packed Lunch Boxes (25 boxes)'.",
+      "module": "food",
+      "time": "25 mins ago",
+      "read": false,
+      "link": "/food"
+    },
+    {
+      "id": "notif-2",
+      "title": "Critical Blood Request in Rajkot",
+      "message": "B+ blood needed urgently for surgery at Civil Hospital, Rajkot.",
+      "module": "blood",
+      "time": "2 hours ago",
+      "read": false,
+      "link": "/blood"
+    },
+    {
+      "id": "notif-3",
+      "title": "Funds Ledger Updated",
+      "message": "₹14,500 expense recorded for flood-affected families ration relief.",
+      "module": "funds",
+      "time": "Yesterday",
+      "read": true,
+      "link": "/funds"
+    },
+    {
+      "id": "notif-4",
+      "title": "New Voluntary Donor Registered",
+      "message": "Bhavesh Chudasama (B+) registered as an available donor in Rajkot.",
+      "module": "blood",
+      "time": "2 days ago",
+      "read": true,
+      "link": "/blood"
+    }
+  ],
+  "activities": [
+    {
+      "id": "act-1",
+      "module": "FoodShare",
+      "text": "Fresh Roti, Dal & Sabzi (40 meals) posted by Shreeji Caterers",
+      "status": "Available",
+      "tone": "success",
+      "city": "Rajkot",
+      "time": "Just now"
+    },
+    {
+      "id": "act-2",
+      "module": "BloodConnect",
+      "text": "B+ needed urgently at Civil Hospital, Rajkot (Trauma Surgery)",
+      "status": "Urgent",
+      "tone": "danger",
+      "city": "Rajkot",
+      "time": "1 hour ago"
+    },
+    {
+      "id": "act-3",
+      "module": "FoodShare",
+      "text": "Packed Lunch Boxes (25) requested by Robin Hood Army volunteer",
+      "status": "Requested",
+      "tone": "warning",
+      "city": "Ahmedabad",
+      "time": "2 hours ago"
+    },
+    {
+      "id": "act-4",
+      "module": "CommunityFunds",
+      "text": "Expense: ₹14,500 recorded for Ration Relief supplies",
+      "status": "Recorded",
+      "tone": "info",
+      "city": "Rajkot",
+      "time": "Yesterday"
+    },
+    {
+      "id": "act-5",
+      "module": "BloodConnect",
+      "text": "Devang Trivedi posted emergency request for 3 units of O- at Apollo Hospitals",
+      "status": "Critical",
+      "tone": "danger",
+      "city": "Ahmedabad",
+      "time": "Yesterday"
+    },
+    {
+      "id": "act-6",
+      "module": "CommunityFunds",
+      "text": "Direct contribution: ₹25,000 received from Merchants Charitable Wing",
+      "status": "Received",
+      "tone": "success",
+      "city": "Rajkot",
+      "time": "3 days ago"
+    }
+  ],
+  "communityGroups": [
+    {
+      "id": "group-1",
+      "name": "Rajkot Disaster & Relief Circle",
+      "description": "Community-led rapid emergency ration and medical supplies relief across Rajkot district.",
+      "city": "Rajkot",
+      "category": "Disaster Relief",
+      "creator": "Vikramjit Singh",
+      "createdAt": "2026-01-15",
+      "members": [
+        {
+          "name": "Vikramjit Singh",
+          "role": "Admin",
+          "email": "vikram.singh@sevasetu.org"
+        },
+        {
+          "name": "Priya Sharma",
+          "role": "Treasurer",
+          "email": "priya.sharma@example.org"
+        },
+        {
+          "name": "Rajesh Patel",
+          "role": "Member",
+          "email": "rajesh.annapurna@example.com"
+        }
+      ],
+      "balance": 28500
+    },
+    {
+      "id": "group-2",
+      "name": "Saurashtra Annakshetra & Kitchen Alliance",
+      "description": "Transparent pooled fund for daily free meal kitchens, grain banks, and clean drinking water.",
+      "city": "Ahmedabad",
+      "category": "Community Kitchen",
+      "creator": "Rajesh Patel",
+      "createdAt": "2026-02-01",
+      "members": [
+        {
+          "name": "Rajesh Patel",
+          "role": "Admin",
+          "email": "rajesh.annapurna@example.com"
+        },
+        {
+          "name": "Priya Sharma",
+          "role": "Member",
+          "email": "priya.sharma@example.org"
+        }
+      ],
+      "balance": 12000
+    },
+    {
+      "id": "group-3",
+      "name": "Gujarat Emergency Medical Care Network",
+      "description": "Micro-grants and travel logistics for patients requiring urgent hospital transfusions and surgery kits.",
+      "city": "Surat",
+      "category": "Medical Aid",
+      "creator": "Dr. Ananya Mehta",
+      "createdAt": "2026-02-10",
+      "members": [
+        {
+          "name": "Dr. Ananya Mehta",
+          "role": "Admin",
+          "email": "ananya.mehta@cityhospital.org"
+        },
+        {
+          "name": "Vikramjit Singh",
+          "role": "Member",
+          "email": "vikram.singh@sevasetu.org"
+        }
+      ],
+      "balance": 18200
+    }
+  ]
+}

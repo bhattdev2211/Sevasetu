@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect — SevaSetu</title>
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Demo Banner -->
+  <div class="demo-banner" role="note">
+    <div class="demo-banner-content">
+      <span>
+        <strong>BloodConnect Module:</strong> Emergency voluntary donor discovery and hospital blood request coordination with consent protection.
+      </span>
+      <div class="demo-banner-actions">
+        <button type="button" class="demo-banner-reset-btn" id="demo-reset-btn">🔄 Reset Sample Data</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="/" class="brand-logo-link" aria-label="SevaSetu Home">
+        <img src="/static/img/logo.svg" alt="SevaSetu Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <a href="/food" class="nav-link">FoodShare</a>
+        <a href="/blood" class="nav-link active">BloodConnect</a>
+        <a href="/funds" class="nav-link">CommunityFunds</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/help" class="nav-link">Help</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="dropdown-wrapper">
+          <button type="button" class="icon-btn" id="notif-btn" aria-label="Notifications">
+            🔔
+            <span class="notif-dot" id="notif-dot" style="display: none;">0</span>
+          </button>
+          <div class="dropdown-panel notif-dropdown" id="notif-dropdown">
+            <div class="dropdown-head">
+              <strong>Notifications (<span id="notif-unread-count">0 new</span>)</strong>
+              <button type="button" class="link-btn-text" id="notif-mark-all">Mark all read</button>
+            </div>
+            <div class="notif-popover-list" id="notif-list"></div>
+            <div class="dropdown-footer">
+              <a href="/dashboard" style="font-size: 0.82rem; font-weight: 600;">View in Dashboard →</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="nav-user-area" class="dropdown-wrapper"></div>
+        <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    <div class="container" style="padding-bottom: 3.5rem;">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div>
+          <span class="eyebrow" style="color: #c43232;">Emergency Voluntary Blood Network</span>
+          <h1>BloodConnect</h1>
+          <p>Connect voluntary, consent-based donors with verified hospital requirements across Gujarat.</p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button type="button" class="btn btn-blood" onclick="openModal('post-blood-req-modal')">
+            🩸 Request Blood Urgently
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="openModal('reg-donor-modal')">
+            ❤️ Register as Voluntary Donor
+          </button>
+        </div>
+      </div>
+
+      <!-- Medical Safety Notice -->
+      <div class="blood-warning-card">
+        <span style="font-size: 1.5rem;">⚠️</span>
+        <div>
+          <strong>Emergency Life Support Notice:</strong> If this is an immediate life-threatening emergency, please contact the nearest hospital blood bank or call <strong>108 / 112</strong> without delay. BloodConnect facilitates voluntary community discovery and does not guarantee medical compatibility or hospital reserve stock.
+        </div>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+        <div class="blood-tabs">
+          <button type="button" class="blood-tab active" id="tab-btn-requests">
+            ⚡ Urgent Blood Requests
+          </button>
+          <button type="button" class="blood-tab" id="tab-btn-donors">
+            👤 Voluntary Donor Directory
+          </button>
+        </div>
+
+        <div>
+          <button type="button" class="btn btn-ghost btn-sm" id="toggle-compat-btn">
+            Show Blood Compatibility Chart
+          </button>
+        </div>
+      </div>
+
+      <!-- Compatibility Matrix Card (Hidden by default) -->
+      <div class="card" id="compat-matrix-card" style="display: none; margin-bottom: 1.25rem;">
+        <h3 style="margin-bottom: 0.35rem;">Blood Group Compatibility Guide</h3>
+        <p class="muted" style="font-size: 0.85rem; margin-bottom: 0.75rem;">
+          O- is the universal red cell donor. AB+ is the universal recipient. Always follow hospital cross-matching protocols.
+        </p>
+        <div class="compat-grid">
+          <div class="compat-box">
+            <span class="blood-badge-sm">O-</span>
+            <div><strong>Universal Donor</strong><div class="muted" style="font-size: 0.76rem;">Can donate to: ALL groups</div></div>
+          </div>
+          <div class="compat-box">
+            <span class="blood-badge-sm">O+</span>
+            <div><strong>O Positive</strong><div class="muted" style="font-size: 0.76rem;">Can donate to: O+, A+, B+, AB+</div></div>
+          </div>
+          <div class="compat-box">
+            <span class="blood-badge-sm">A+</span>
+            <div><strong>A Positive</strong><div class="muted" style="font-size: 0.76rem;">Can donate to: A+, AB+</div></div>
+          </div>
+          <div class="compat-box">
+            <span class="blood-badge-sm">B+</span>
+            <div><strong>B Positive</strong><div class="muted" style="font-size: 0.76rem;">Can donate to: B+, AB+</div></div>
+          </div>
+          <div class="compat-box">
+            <span class="blood-badge-sm">AB+</span>
+            <div><strong>Universal Recipient</strong><div class="muted" style="font-size: 0.76rem;">Can receive from: ALL groups</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters & Search -->
+      <div class="filter-bar">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="blood-search" placeholder="Search by patient, hospital, city or donor name..." class="input search-input">
+        </div>
+
+        <div class="filter-controls">
+          <select id="blood-city-filter" class="input filter-select">
+            <option value="All Cities">All Cities</option>
+            <option value="Rajkot">Rajkot</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Surat">Surat</option>
+            <option value="Vadodara">Vadodara</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Blood Group Filter Pills -->
+      <div class="blood-group-pills">
+        <span style="font-size: 0.82rem; font-weight: 700; color: var(--navy-900); margin-right: 0.25rem;">Group:</span>
+        <button type="button" class="blood-pill active" data-group="All Groups">All Groups</button>
+        <button type="button" class="blood-pill" data-group="O+">O+</button>
+        <button type="button" class="blood-pill" data-group="O-">O-</button>
+        <button type="button" class="blood-pill" data-group="A+">A+</button>
+        <button type="button" class="blood-pill" data-group="A-">A-</button>
+        <button type="button" class="blood-pill" data-group="B+">B+</button>
+        <button type="button" class="blood-pill" data-group="B-">B-</button>
+        <button type="button" class="blood-pill" data-group="AB+">AB+</button>
+        <button type="button" class="blood-pill" data-group="AB-">AB-</button>
+      </div>
+
+      <!-- Dynamic Tab Content -->
+      <div id="blood-content-area" style="margin-top: 1.5rem;">
+        <div style="text-align: center; padding: 3rem 1rem; color: var(--muted)">Loading blood network data...</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal: Post Blood Request -->
+  <div class="modal-backdrop" id="post-blood-req-modal">
+    <div class="modal-dialog" style="max-width: 620px;">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Broadcast Emergency Blood Request</h2>
+          <p class="modal-subtitle">Directly alerts voluntary donors in your city.</p>
+        </div>
+        <button type="button" class="icon-btn modal-close-btn" onclick="closeModal('post-blood-req-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="post-blood-req-form" class="modal-form">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="label">Patient Full Name *</label>
+              <input type="text" id="req-patient-name" required placeholder="e.g. Ramesh Vaghela" class="input">
+            </div>
+            <div class="form-group">
+              <label class="label">Blood Group Needed *</label>
+              <select id="req-blood-group" class="input">
+                <option value="O+">O Positive (O+)</option>
+                <option value="O-">O Negative (O-)</option>
+                <option value="A+">A Positive (A+)</option>
+                <option value="A-">A Negative (A-)</option>
+                <option value="B+">B Positive (B+)</option>
+                <option value="B-">B Negative (B-)</option>
+                <option value="AB+">AB Positive (AB+)</option>
+                <option value="AB-">AB Negative (AB-)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="label">Units Required *</label>
+              <input type="number" id="req-units" min="1" max="10" required value="1" class="input">
+            </div>
+            <div class="form-group">
+              <label class="label">Urgency Level *</label>
+              <select id="req-urgency" class="input">
+                <option value="Critical">Critical (Immediate Surgery / ICU)</option>
+                <option value="Urgent">Urgent (Within 4-6 hours)</option>
+                <option value="Needed today">Needed today</option>
+                <option value="Tomorrow">Scheduled Tomorrow</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="label">Hospital / Blood Bank Name *</label>
+              <input type="text" id="req-hospital" required placeholder="e.g. Civil Hospital, Rajkot" class="input">
+            </div>
+            <div class="form-group">
+              <label class="label">City *</label>
+              <select id="req-city" class="input">
+                <option value="Rajkot">Rajkot</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Surat">Surat</option>
+                <option value="Vadodara">Vadodara</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="label">Contact Person *</label>
+              <input type="text" id="req-contact-name" required placeholder="Attendant / Coordinator Name" class="input">
+            </div>
+            <div class="form-group">
+              <label class="label">Emergency Contact Phone *</label>
+              <input type="tel" id="req-contact-phone" required placeholder="+91 98250 12345" class="input">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label">Medical Case Context</label>
+            <textarea id="req-notes" rows="2" placeholder="e.g. Trauma accident surgery in OT. Hospital blood replacement requested." class="input"></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('post-blood-req-modal')">Cancel</button>
+            <button type="submit" class="btn btn-blood">🚨 Broadcast Emergency Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Register Voluntary Donor -->
+  <div class="modal-backdrop" id="reg-donor-modal">
+    <div class="modal-dialog" style="max-width: 520px;">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Register as Voluntary Blood Donor</h2>
+          <p class="modal-subtitle">Save lives when emergencies strike in your city.</p>
+        </div>
+        <button type="button" class="icon-btn modal-close-btn" onclick="closeModal('reg-donor-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="reg-donor-form" class="modal-form">
+          <div class="form-group">
+            <label class="label">Full Name *</label>
+            <input type="text" id="donor-name" required placeholder="Your full name" class="input">
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="label">Blood Group *</label>
+              <select id="donor-blood-group" class="input">
+                <option value="O+">O Positive (O+)</option>
+                <option value="O-">O Negative (O-)</option>
+                <option value="A+">A Positive (A+)</option>
+                <option value="A-">A Negative (A-)</option>
+                <option value="B+">B Positive (B+)</option>
+                <option value="B-">B Negative (B-)</option>
+                <option value="AB+">AB Positive (AB+)</option>
+                <option value="AB-">AB Negative (AB-)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label">City *</label>
+              <select id="donor-city" class="input">
+                <option value="Rajkot">Rajkot</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Surat">Surat</option>
+                <option value="Vadodara">Vadodara</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label">Mobile Number *</label>
+            <input type="tel" id="donor-phone" required placeholder="+91 98250 12345" class="input">
+            <small class="muted" style="font-size: 0.78rem;">Number is protected and masked to prevent spam.</small>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="label">When was your last donation?</label>
+              <select id="donor-last-date" class="input">
+                <option value="First-time Donor">First-time Donor</option>
+                <option value="Over 3 months ago" selected>Over 3 months ago (Eligible)</option>
+                <option value="Within last 3 months">Within last 3 months (Resting)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="label">Past Donations Count</label>
+              <input type="number" id="donor-prev-count" min="0" value="1" class="input">
+            </div>
+          </div>
+
+          <label style="display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.85rem; color: var(--muted); cursor: pointer; margin-top: 0.5rem;">
+            <input type="checkbox" required checked style="margin-top: 3px;">
+            <span>I confirm that I am aged 18-65 and consent to receive verified emergency requests.</span>
+          </label>
+
+          <div class="modal-actions">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('reg-donor-modal')">Cancel</button>
+            <button type="submit" class="btn btn-blood">Join Lifesaver Registry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Consent-Gated Donor Contact Request -->
+  <div class="modal-backdrop" id="contact-consent-modal">
+    <div class="modal-dialog" style="max-width: 480px;">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Request Donor Contact</h2>
+          <p class="modal-subtitle">Consent-protected voluntary donor communication.</p>
+        </div>
+        <button type="button" class="icon-btn modal-close-btn" onclick="closeModal('contact-consent-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="consent-donor-info" style="background: var(--offwhite); padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;"></div>
+
+        <form id="donor-consent-form">
+          <p class="muted" style="font-size: 0.86rem; margin-bottom: 0.85rem;">
+            To prevent spam, voluntary donor contacts require specifying the patient hospital case. An audit record is logged.
+          </p>
+
+          <div class="form-group">
+            <label class="label">Your Name / Organization *</label>
+            <input type="text" id="consent-req-name" required placeholder="e.g. Dr. Dave / Attendant" class="input">
+          </div>
+
+          <div class="form-group">
+            <label class="label">Hospital / Emergency Reason *</label>
+            <input type="text" id="consent-req-hospital" required placeholder="e.g. Civil Hospital ICU Surgery" class="input">
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('contact-consent-modal')">Cancel</button>
+            <button type="submit" class="btn btn-blood">Confirm & Reveal Contact</button>
+          </div>
+        </form>
+
+        <div id="donor-revealed-contact" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="brand-logo-link">
+            <img src="/static/img/logo.svg" alt="SevaSetu Logo" class="brand-logo-footer">
+          </a>
+          <p style="margin-top: 0.75rem; max-width: 420px; color: #cbd5e1;">
+            Voluntary blood coordination across Gujarat. For clinical emergencies, call 108 or hospital blood banks immediately.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: #fff;">Explore Services</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+            <a href="/food">FoodShare</a>
+            <a href="/blood">BloodConnect</a>
+            <a href="/funds">CommunityFunds</a>
+            <a href="/about">About Us</a>
+            <a href="/help">Help & Guidelines</a>
+          </div>
+        </div>
+      </div>
+      <small style="color: #94a3b8;">
+        © 2026 SevaSetu Platform. Consent-protected voluntary mutual aid.
+      </small>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/blood.js"></script>
+</body>
+</html>

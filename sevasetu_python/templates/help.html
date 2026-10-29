@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help & Community Guidelines — SevaSetu</title>
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="/" class="brand-logo-link" aria-label="SevaSetu Home">
+        <img src="/static/img/logo.svg" alt="SevaSetu Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links" id="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <a href="/food" class="nav-link">FoodShare</a>
+        <a href="/blood" class="nav-link">BloodConnect</a>
+        <a href="/funds" class="nav-link">CommunityFunds</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/help" class="nav-link active">Help</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div id="nav-user-area" class="dropdown-wrapper"></div>
+        <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    <div class="container" style="padding-bottom: 4rem;">
+      <div class="page-header" style="margin-top: 2rem;">
+        <div>
+          <span class="eyebrow">Community Assistance & FAQ</span>
+          <h1>Help & Guidelines</h1>
+          <p>Find answers to common questions about food safety, voluntary donor privacy, and transparent fund management.</p>
+        </div>
+      </div>
+
+      <!-- Emergency Helpline Notice -->
+      <div class="blood-warning-card" style="margin-bottom: 2rem;">
+        <span style="font-size: 1.8rem;">🚨</span>
+        <div>
+          <strong style="font-size: 1.05rem;">Life-Threatening Emergency Contacts:</strong>
+          <p style="margin: 0.25rem 0 0; font-size: 0.9rem;">
+            For immediate clinical emergencies or critical ICU blood bank needs, call <strong>108 (National Emergency Ambulance)</strong> or <strong>112</strong> immediately. SevaSetu is a community volunteer platform and does not replace emergency clinical hospital services.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion / Grid -->
+      <div class="faq-grid">
+        <!-- FoodShare FAQs -->
+        <div class="faq-item">
+          <h3>🍲 How does FoodShare ensure food safety and quality?</h3>
+          <p>
+            Donors must state preparation time, storage conditions, and a strict pickup deadline (typically within 4 to 6 hours of cooking). Volunteers are instructed to visually inspect containers and verify freshness before distributing meals to shelter homes.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>🍲 Can I edit or cancel a food donation after posting?</h3>
+          <p>
+            Yes. Donors can edit quantities, deadlines, and contact information, or cancel active listings directly from the FoodShare page if the food has already been collected through other channels.
+          </p>
+        </div>
+
+        <!-- BloodConnect FAQs -->
+        <div class="faq-item">
+          <h3>🩸 Why are blood donor phone numbers masked?</h3>
+          <p>
+            To protect our voluntary donors from unsolicited commercial spam, phone numbers are masked by default. Requesters must submit their name and hospital case reason through a consent-controlled workflow, which generates an auditable record before contact details are revealed.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>🩸 Who is eligible to register as a voluntary blood donor?</h3>
+          <p>
+            Healthy adults aged 18 to 65 weighing over 45 kg, with no recent history of bloodborne illnesses or major surgeries in the last 6 months. Male donors can donate every 3 months; female donors every 4 months.
+          </p>
+        </div>
+
+        <!-- CommunityFunds FAQs -->
+        <div class="faq-item">
+          <h3>🛡️ How is the CommunityFunds balance computed?</h3>
+          <p>
+            The balance is calculated directly from persisted transactions: <code>Total Verified Inflow (Income) - Total Documented Relief Disbursements (Expenses)</code>. Negative amounts are strictly rejected by the backend.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>🛡️ Can anyone record relief expenditures?</h3>
+          <p>
+            While any community member or supporter can contribute funds, only verified group administrators and treasurers (e.g., NGO Organizers or verified stewards) are authorized to log expenditures with invoices and receipt numbers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="brand-logo-link">
+            <img src="/static/img/logo.svg" alt="SevaSetu Logo" class="brand-logo-footer">
+          </a>
+          <p style="margin-top: 0.75rem; max-width: 420px; color: #cbd5e1;">
+            SevaSetu Community Platform. Built with pure HTML, CSS, JavaScript, and Python backend.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: #fff;">Explore Services</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+            <a href="/food">FoodShare</a>
+            <a href="/blood">BloodConnect</a>
+            <a href="/funds">CommunityFunds</a>
+            <a href="/about">About Us</a>
+            <a href="/help">Help & Guidelines</a>
+          </div>
+        </div>
+      </div>
+      <small style="color: #94a3b8;">
+        © 2026 SevaSetu Platform. Transparent community mutual aid.
+      </small>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
+

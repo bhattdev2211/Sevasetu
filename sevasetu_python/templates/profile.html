@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile & Impact — SevaSetu</title>
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Demo Banner -->
+  <div class="demo-banner" role="note">
+    <div class="demo-banner-content">
+      <span>
+        <strong>User Profile & Identity:</strong> Manage verified contact details, view personal community impact, and test roles.
+      </span>
+      <div class="demo-banner-actions">
+        <button type="button" class="demo-banner-reset-btn" id="demo-reset-btn">🔄 Reset Sample Data</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="/" class="brand-logo-link" aria-label="SevaSetu Home">
+        <img src="/static/img/logo.svg" alt="SevaSetu Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <a href="/food" class="nav-link">FoodShare</a>
+        <a href="/blood" class="nav-link">BloodConnect</a>
+        <a href="/funds" class="nav-link">CommunityFunds</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/help" class="nav-link">Help</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div id="nav-user-area" class="dropdown-wrapper"></div>
+        <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    <div class="container" style="padding-bottom: 3.5rem;" id="profile-content-area">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div>
+          <span class="eyebrow">User Profile & Stewardship</span>
+          <h1>My Account</h1>
+          <p>Manage your community profile, contact details and review your personal contribution impact.</p>
+        </div>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="/login" class="btn btn-secondary">Switch Persona</a>
+        </div>
+      </div>
+
+      <div class="profile-layout-grid">
+        <!-- Left: User Card -->
+        <div class="card profile-card">
+          <div class="profile-avatar" id="profile-avatar">P</div>
+          <h2 class="profile-name" id="profile-name">Priya Sharma</h2>
+          <span class="profile-role-badge" id="profile-role">Volunteer</span>
+          <p class="muted" style="margin: 0.5rem 0 1.25rem; font-size: 0.88rem;">Active Contributor</p>
+
+          <div style="text-align: left; display: grid; gap: 0.65rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.88rem;">
+            <div>📧 <span id="profile-email">email@example.com</span></div>
+            <div>📞 <span id="profile-phone">+91 98250 12345</span></div>
+            <div>📍 <span id="profile-city">Rajkot</span></div>
+            <div>🏢 <span id="profile-org">Youth Seva Group</span></div>
+          </div>
+
+          <button type="button" class="btn btn-secondary btn-sm" style="width: 100%; margin-top: 1.25rem;" onclick="toggleProfileEdit(true)">
+            Edit Profile Details
+          </button>
+        </div>
+
+        <!-- Right: Impact & Edit -->
+        <div>
+          <!-- Impact View Card -->
+          <div id="profile-view-card" style="display: block;">
+            <div class="card" style="margin-bottom: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="margin: 0;">My Community Impact</h3>
+                <span class="badge badge-success">Verified Contributor</span>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <span class="stat-icon">🍲</span>
+                  <div>
+                    <div class="stat-value" id="profile-meals-stat">45+</div>
+                    <div class="stat-label">Meals Rescued</div>
+                  </div>
+                </div>
+
+                <div class="stat-card">
+                  <span class="stat-icon blood" style="background: #fee2e2; color: #991b1b;">🩸</span>
+                  <div>
+                    <div class="stat-value" id="profile-donor-stat">Active</div>
+                    <div class="stat-label">Donor Registry</div>
+                  </div>
+                </div>
+
+                <div class="stat-card">
+                  <span class="stat-icon funds" style="background: #e3f6ea; color: #146c3a;">🛡️</span>
+                  <div>
+                    <div class="stat-value" id="profile-funds-stat">₹3,500</div>
+                    <div class="stat-label">Contributed Funds</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Service Links -->
+            <div class="card">
+              <h3 style="margin-bottom: 0.75rem;">Your Service Shortcuts</h3>
+              <div class="quick-actions" style="margin-top: 0; display: grid; gap: 0.5rem;">
+                <a href="/food" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">🍲 FoodShare Listings & Pickups</a>
+                <a href="/blood" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">🩸 Emergency Blood Requests & Donors</a>
+                <a href="/funds" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">🛡️ Community Treasury & Groups</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Edit Profile Card (Hidden by default) -->
+          <div id="profile-edit-card" class="card" style="display: none;">
+            <h3 style="margin-bottom: 0.5rem;">Edit Personal Details</h3>
+            <p class="muted" style="font-size: 0.85rem; margin-bottom: 1.25rem;">
+              Security Notice: System roles and permissions cannot be edited here to ensure governance integrity.
+            </p>
+            <form id="profile-edit-form" class="modal-form">
+              <div class="form-group">
+                <label class="label">Full Name *</label>
+                <input type="text" id="edit-name" required class="input">
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="label">Phone Number *</label>
+                  <input type="tel" id="edit-phone" required class="input">
+                </div>
+                <div class="form-group">
+                  <label class="label">City *</label>
+                  <select id="edit-city" class="input">
+                    <option value="Rajkot">Rajkot</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Vadodara">Vadodara</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="label">Organization / Group</label>
+                <input type="text" id="edit-org" class="input">
+              </div>
+
+              <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="toggleProfileEdit(false)">Cancel</button>
+                <button type="submit" class="btn btn-primary">✓ Save Changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="brand-logo-link">
+            <img src="/static/img/logo.svg" alt="SevaSetu Logo" class="brand-logo-footer">
+          </a>
+          <p style="margin-top: 0.75rem; max-width: 420px; color: #cbd5e1;">
+            SevaSetu — Gujarat's open community giving and volunteer coordination platform.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: #fff;">Explore Services</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+            <a href="/food">FoodShare</a>
+            <a href="/blood">BloodConnect</a>
+            <a href="/funds">CommunityFunds</a>
+            <a href="/about">About Us</a>
+            <a href="/help">Help & Guidelines</a>
+          </div>
+        </div>
+      </div>
+      <small style="color: #94a3b8;">
+        © 2026 SevaSetu Platform. Transparent community mutual aid.
+      </small>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/auth.js"></script>
+</body>
+</html>

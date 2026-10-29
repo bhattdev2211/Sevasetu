@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About SevaSetu — Mission & Vision</title>
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="/" class="brand-logo-link" aria-label="SevaSetu Home">
+        <img src="/static/img/logo.svg" alt="SevaSetu Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links" id="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <a href="/food" class="nav-link">FoodShare</a>
+        <a href="/blood" class="nav-link">BloodConnect</a>
+        <a href="/funds" class="nav-link">CommunityFunds</a>
+        <a href="/about" class="nav-link active">About</a>
+        <a href="/help" class="nav-link">Help</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div id="nav-user-area" class="dropdown-wrapper"></div>
+        <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    <div class="container" style="padding-bottom: 4rem;">
+      <!-- Hero -->
+      <div class="section-header" style="margin-top: 3rem;">
+        <span class="eyebrow">Our Mission & Purpose</span>
+        <h1>Building Bridges of Compassion & Solidarity</h1>
+        <p>
+          "Seva" means selfless community service. "Setu" means bridge. SevaSetu connects people who have surplus resources with neighbors who need urgent help.
+        </p>
+      </div>
+
+      <!-- Core Pillars Grid -->
+      <div class="pillars-grid">
+        <div class="pillar-card card-hover">
+          <div class="pillar-icon-wrap">🍲</div>
+          <h3>Zero Food Waste</h3>
+          <p class="muted">
+            Bridging the tragic gap between evening banquet surplus and nighttime urban hunger. We connect caterers and restaurants directly with local shelter homes and night kitchens.
+          </p>
+        </div>
+
+        <div class="pillar-card card-hover">
+          <div class="pillar-icon-wrap" style="background: #fde8e8; color: #dc2626;">🩸</div>
+          <h3>Emergency Blood Access</h3>
+          <p class="muted">
+            Creating a trusted voluntary donor network where donor privacy is safeguarded by strict consent controls, and emergency hospital cases get matched quickly.
+          </p>
+        </div>
+
+        <div class="pillar-card card-hover">
+          <div class="pillar-icon-wrap" style="background: #ecfdf5; color: #059669;">🛡️</div>
+          <h3>Radical Financial Transparency</h3>
+          <p class="muted">
+            Every rupee donated to community disaster or relief drives is publicly accounted for in our open digital ledger with itemized receipts, ensuring zero leakage.
+          </p>
+        </div>
+      </div>
+
+      <!-- Story Section -->
+      <div class="card" style="margin-top: 2rem; padding: 2.5rem 2rem;">
+        <h2>The SevaSetu Story</h2>
+        <p style="color: var(--muted); font-size: 0.98rem; line-height: 1.8;">
+          Across Gujarat's growing cities — Rajkot, Ahmedabad, Surat, and Vadodara — hundreds of generous individuals, caterers, and voluntary donors want to help, but fragmented WhatsApp groups, unverified forwards, and opaque charities make coordination difficult and stressful.
+        </p>
+        <p style="color: var(--muted); font-size: 0.98rem; line-height: 1.8;">
+          SevaSetu was built to provide a clean, dignified, open technology platform:
+          real-time listings with verified freshness deadlines, privacy-first blood donor discovery, and an auditable community fund where every contributor can see exactly where their rupee made a difference.
+        </p>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/register" class="btn btn-primary">Join the Community →</a>
+          <a href="/dashboard" class="btn btn-secondary">Explore Live Platform</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="brand-logo-link">
+            <img src="/static/img/logo.svg" alt="SevaSetu Logo" class="brand-logo-footer">
+          </a>
+          <p style="margin-top: 0.75rem; max-width: 420px; color: #cbd5e1;">
+            SevaSetu — Gujarat's open community giving and volunteer coordination platform.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: #fff;">Explore Services</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+            <a href="/food">FoodShare</a>
+            <a href="/blood">BloodConnect</a>
+            <a href="/funds">CommunityFunds</a>
+            <a href="/about">About Us</a>
+            <a href="/help">Help & Guidelines</a>
+          </div>
+        </div>
+      </div>
+      <small style="color: #94a3b8;">
+        © 2026 SevaSetu Platform. Transparent community mutual aid.
+      </small>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
+

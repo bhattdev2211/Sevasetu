@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SevaSetu — Community Help and Giving Platform</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Demo Banner -->
+  <div class="demo-banner" role="note">
+    <div class="demo-banner-content">
+      <span>
+        <strong>SevaSetu Platform:</strong> Live full-stack community network for surplus food rescue, emergency voluntary blood discovery, and transparent community treasury.
+      </span>
+      <div class="demo-banner-actions">
+        <button type="button" class="demo-banner-reset-btn" id="demo-reset-btn">🔄 Reset Sample Data</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo-link" aria-label="SevaSetu Home">
+        <img src="img/logo.svg" alt="SevaSetu Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="food.html" class="nav-link">FoodShare</a>
+        <a href="blood.html" class="nav-link">BloodConnect</a>
+        <a href="funds.html" class="nav-link">CommunityFunds</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="help.html" class="nav-link">Help</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Notifications Dropdown -->
+        <div class="dropdown-wrapper">
+          <button type="button" class="icon-btn" id="notif-btn" aria-label="Notifications">
+            🔔
+            <span class="notif-dot" id="notif-dot" style="display: none;">0</span>
+          </button>
+          <div class="dropdown-panel notif-dropdown" id="notif-dropdown">
+            <div class="dropdown-head">
+              <strong>Notifications (<span id="notif-unread-count">0 new</span>)</strong>
+              <button type="button" class="link-btn-text" id="notif-mark-all">Mark all read</button>
+            </div>
+            <div class="notif-popover-list" id="notif-list"></div>
+            <div class="dropdown-footer">
+              <a href="dashboard.html" style="font-size: 0.82rem; font-weight: 600;">View in Dashboard →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Area -->
+        <div id="nav-user-area" class="dropdown-wrapper"></div>
+        <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" style="color: #7fe3d6;">Community Service & Mutual Aid</span>
+          <h1>A unified bridge to <span class="highlight">share food</span>, mobilize blood donors, and govern community funds.</h1>
+          <p class="lead">
+            SevaSetu connects citizens, kitchens, volunteers, and local aid groups to ensure emergency assistance reaches those in need with complete transparency and zero bureaucratic waste.
+          </p>
+          <div class="hero-cta">
+            <a href="register.html" class="btn btn-light">Get Started Free →</a>
+            <a href="dashboard.html" class="btn btn-secondary">Open Live Dashboard</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Platform modules overview">
+          <a href="food.html" class="hero-row">
+            <span class="ico">🍲</span>
+            <div>
+              <strong>FoodShare (<span id="hero-food-count">4</span> Active Pickups)</strong>
+              <span>Rescue surplus banquet & restaurant food nearby • Shelters & kitchens</span>
+            </div>
+          </a>
+          <a href="blood.html" class="hero-row">
+            <span class="ico" style="background: rgba(254, 202, 202, 0.25); color: #fca5a5;">🩸</span>
+            <div>
+              <strong>BloodConnect (<span id="hero-blood-count">3</span> Urgent Requests)</strong>
+              <span>Consent-based voluntary donor discovery & hospital emergency alerts</span>
+            </div>
+          </a>
+          <a href="funds.html" class="hero-row">
+            <span class="ico" style="background: rgba(167, 243, 208, 0.25); color: #6ee7b7;">🛡️</span>
+            <div>
+              <strong>CommunityFunds (<span id="hero-funds-bal">₹40,500</span> Balance)</strong>
+              <span>100% public auditable ledger with digital receipts & group treasury</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section" style="background: var(--white);">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Three Pillars of Service</span>
+          <h2>Designed for real community impact across Gujarat</h2>
+          <p>Each module provides end-to-end workflows that solve urgent neighborhood problems collaboratively.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card card-hover">
+            <div class="pillar-icon-wrap" style="background: var(--teal-50); color: var(--teal-600); font-size: 1.8rem;">🍲</div>
+            <h3>FoodShare</h3>
+            <p class="muted">
+              Prevent banquet, caterer, and household food waste. Donors list surplus meals with freshness timelines, and verified volunteers pick up and distribute them to local shelters.
+            </p>
+            <a href="food.html" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">Explore FoodShare →</a>
+          </div>
+
+          <div class="pillar-card card-hover">
+            <div class="pillar-icon-wrap" style="background: #fde8e8; color: #dc2626; font-size: 1.8rem;">🩸</div>
+            <h3>BloodConnect</h3>
+            <p class="muted">
+              Emergency blood donor directory with consent-gated contact protection. Filter by blood group and city without exposing private details indiscriminately.
+            </p>
+            <a href="blood.html" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">Explore BloodConnect →</a>
+          </div>
+
+          <div class="pillar-card card-hover">
+            <div class="pillar-icon-wrap" style="background: #ecfdf5; color: #059669; font-size: 1.8rem;">🛡️</div>
+            <h3>CommunityFunds</h3>
+            <p class="muted">
+              Transparent disaster relief, ration relief, and community kitchen treasury. Every single rupee received or spent is public, tagged with receipt IDs and verifiable notes.
+            </p>
+            <a href="funds.html" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">Explore CommunityFunds →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Seamless & Transparent</span>
+          <h2>How SevaSetu Works</h2>
+          <p>Simple 4-step workflow connecting those who can give with those who need help.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+          <div class="card">
+            <div style="font-size: 2rem; font-weight: 800; color: var(--teal-600); margin-bottom: 0.5rem;">01</div>
+            <h4>Join or Switch Persona</h4>
+            <p class="muted" style="font-size: 0.88rem;">
+              Sign up as a volunteer, donor, or organizer, or test immediately using pre-configured verified community personas.
+            </p>
+          </div>
+          <div class="card">
+            <div style="font-size: 2rem; font-weight: 800; color: var(--teal-600); margin-bottom: 0.5rem;">02</div>
+            <h4>Publish or Discover</h4>
+            <p class="muted" style="font-size: 0.88rem;">
+              Post surplus food meals, broadcast emergency blood requirements, or contribute to transparent relief drives.
+            </p>
+          </div>
+          <div class="card">
+            <div style="font-size: 2rem; font-weight: 800; color: var(--teal-600); margin-bottom: 0.5rem;">03</div>
+            <h4>Coordinate with Consent</h4>
+            <p class="muted" style="font-size: 0.88rem;">
+              Claim food pickups with estimated arrival times and access blood donor contacts through an auditable consent workflow.
+            </p>
+          </div>
+          <div class="card">
+            <div style="font-size: 2rem; font-weight: 800; color: var(--teal-600); margin-bottom: 0.5rem;">04</div>
+            <h4>Track Public Impact</h4>
+            <p class="muted" style="font-size: 0.88rem;">
+              Every rescue and expense is recorded in real time on public ledger dashboards with exportable CSV audit trails.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Safety Strip -->
+    <section class="section" style="background: var(--navy-900); color: var(--white); padding: 3.5rem 0;">
+      <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center;">
+        <div>
+          <span class="eyebrow" style="color: #7fe3d6;">Trust & Community Guidelines</span>
+          <h2 style="color: var(--white);">Built on privacy, verification, and zero financial opacity.</h2>
+          <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.25rem;">
+            SevaSetu is built with rigorous ethical guidelines: medical emergency blood requests direct to 108/112 for clinical emergencies, voluntary donor contact numbers are masked behind auditable inquiry logs, and community financial ledgers cannot be corrupted.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="help.html" class="btn btn-primary">Read Community Guidelines</a>
+            <a href="about.html" class="btn btn-secondary">About Platform Mission</a>
+          </div>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius); padding: 1.75rem;">
+          <h3 style="color: var(--white); margin-bottom: 1rem;">Community Guarantees</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; font-size: 0.9rem; color: #e2e8f0;">
+            <li>✓ <strong>100% Transparent Treasury:</strong> Public ledger with receipt tracking for every rupee.</li>
+            <li>✓ <strong>Food Safety Checks:</strong> Clear preparation timestamps and hygiene requirements.</li>
+            <li>✓ <strong>Protected Donor Data:</strong> Consent-gated contact access preventing spam.</li>
+            <li>✓ <strong>No Intermediary Cuts:</strong> Direct connection between volunteers and beneficiaries.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo-link" style="margin-bottom: 0.75rem;">
+            <img src="img/logo.svg" alt="SevaSetu Logo" class="brand-logo-footer">
+          </a>
+          <p style="font-size: 0.9rem; max-width: 440px; margin-top: 0.5rem; color: #cbd5e1;">
+            SevaSetu — Gujarat's open community giving and volunteer coordination platform. Connecting surplus food, voluntary blood donors, and transparent charity.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: var(--white); margin-bottom: 0.75rem;">Quick Navigation</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="food.html">FoodShare</a>
+            <a href="blood.html">BloodConnect</a>
+            <a href="funds.html">CommunityFunds</a>
+            <a href="about.html">About Us</a>
+            <a href="help.html">Help & Safety</a>
+            <a href="login.html">Sign In</a>
+            <a href="register.html">Register</a>
+          </div>
+        </div>
+      </div>
+      <small style="color: #94a3b8;">
+        © 2026 SevaSetu Community Initiative. For life-threatening clinical emergencies, always contact 108 or your nearest hospital blood bank immediately.
+      </small>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Update live hero counters from summary API
+    async function updateHeroStats() {
+      try {
+        const sum = await API.getSummary();
+        const foodEl = document.getElementById('hero-food-count');
+        const bloodEl = document.getElementById('hero-blood-count');
+        const fundsEl = document.getElementById('hero-funds-bal');
+
+        if (foodEl) foodEl.textContent = sum.activeFoodCount || 4;
+        if (bloodEl) bloodEl.textContent = sum.openBloodCount || 3;
+        if (fundsEl && sum.fundsSummary) fundsEl.textContent = formatINR(sum.fundsSummary.balance || 40500);
+      } catch (e) {
+        console.warn('Hero counters running on cached seed data', e);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', updateHeroStats);
+  </script>
+</body>
+</html>

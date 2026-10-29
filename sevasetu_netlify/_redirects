@@ -1,0 +1,14 @@
+# Netlify Clean URL and SPA Redirects for SevaSetu
+/dashboard    /dashboard.html    200
+/food         /food.html         200
+/blood        /blood.html        200
+/funds        /funds.html        200
+/profile      /profile.html      200
+/login        /login.html        200
+/register     /register.html     200
+/about        /about.html        200
+/help         /help.html         200
+
+# 404 fallback
+/*            /404.html          404
+

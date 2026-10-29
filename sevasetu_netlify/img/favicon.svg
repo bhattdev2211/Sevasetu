@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="favTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="favNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0b1f3a"/>
+    </linearGradient>
+    <linearGradient id="favHeart" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect width="64" height="64" rx="16" fill="#0b1f3a"/>
+
+  <!-- Bridge Arc (Setu) -->
+  <path d="M 8 52 C 20 34, 44 34, 56 52 C 48 42, 16 42, 8 52 Z" fill="url(#favTeal)" />
+  <path d="M 12 47 C 22 32, 42 32, 52 47" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.9" />
+
+  <!-- Left Figure -->
+  <circle cx="18" cy="24" r="5" fill="#14b8a6" />
+  <path d="M 10 39 C 10 31, 26 31, 26 39" fill="#14b8a6" />
+
+  <!-- Right Figure -->
+  <circle cx="46" cy="24" r="5" fill="#ffffff" />
+  <path d="M 38 39 C 38 31, 54 31, 54 39" fill="#ffffff" />
+
+  <!-- Center Heart -->
+  <path d="M 32 23 C 32 19.5, 28.5 17, 26 19.5 C 24 21.5, 32 29, 32 29 C 32 29, 40 21.5, 38 19.5 C 35.5 17, 32 19.5, 32 23 Z" fill="url(#favHeart)" />
+</svg>
+

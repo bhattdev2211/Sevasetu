@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60" fill="none" role="img" aria-label="SevaSetu Logo">
+  <defs>
+    <linearGradient id="ssTealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="ssNavyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0b1f3a"/>
+    </linearGradient>
+    <linearGradient id="ssHeartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon Mark (48x48 inside 60x60 canvas) -->
+  <g transform="translate(6, 6)">
+    <!-- Base Bridge Arc (Setu) -->
+    <path d="M 4 40 C 14 26, 34 26, 44 40 C 37 32, 11 32, 4 40 Z" fill="url(#ssNavyGrad)" />
+    <!-- Secondary Dynamic Support Arch -->
+    <path d="M 8 36 C 16 24, 32 24, 40 36" stroke="url(#ssTealGrad)" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    
+    <!-- Left Person / Pillar of Service -->
+    <circle cx="13" cy="17" r="4.5" fill="url(#ssTealGrad)" />
+    <path d="M 7 29 C 7 23, 19 23, 19 29" fill="url(#ssTealGrad)" />
+
+    <!-- Right Person / Pillar of Receiving -->
+    <circle cx="35" cy="17" r="4.5" fill="url(#ssNavyGrad)" />
+    <path d="M 29 29 C 29 23, 41 23, 41 29" fill="url(#ssNavyGrad)" />
+
+    <!-- Central Heart of Giving (The Union of Seva) -->
+    <path d="M 24 16 C 24 13.5, 21.5 11.5, 19.5 13.5 C 18 15, 24 20.5, 24 20.5 C 24 20.5, 30 15, 28.5 13.5 C 26.5 11.5, 24 13.5, 24 16 Z" fill="url(#ssHeartGrad)" />
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(64, 40)">
+    <text font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.5">
+      <tspan fill="#0b1f3a">Seva</tspan><tspan fill="#0f766e">Setu</tspan>
+    </text>
+    <!-- Tagline -->
+    <text x="1" y="13" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="8.5" fill="#64748b" letter-spacing="1.4">COMMUNITY GIVING</text>
+  </g>
+</svg>
+
