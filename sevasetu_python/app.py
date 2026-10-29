@@ -5,6 +5,9 @@ Automatically checks if Flask is installed:
 - If not installed: launches the zero-dependency standard library server.
 Run with:
     python app.py
+Or via Gunicorn:
+    gunicorn app:app
+    gunicorn wsgi:app
 """
 
 import sys
@@ -20,6 +23,14 @@ if hasattr(sys.stdout, 'reconfigure'):
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
+
+# Expose WSGI application instance for Gunicorn (gunicorn app:app)
+try:
+    from flask_app import app
+    application = app
+except Exception:
+    app = None
+    application = None
 
 def main():
     port = 5000
